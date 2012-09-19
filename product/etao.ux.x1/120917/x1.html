@@ -1,110 +1,195 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Brix Kwicks Demo</title>
-		<link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/p/brix/brix.css" charset="utf-8">
-		<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
-		<script src="http://a.tbcdn.cn/p/brix/brix.js"></script>
-		<script>
-			Brix.config({
-				path:'http://a.tbcdn.cn/p/'
-			})
-			KISSY.config({
-				packages : [{
-					name : "components",
-					tag : "20120917",
-					path : "./", //这里可以配置cdn的路径
-					charset : "utf-8"
-				}, {
-					name : "imports",
-					tag : "20120917",
-					path : "./", //这里可以配置cdn的路径
-					charset : "utf-8"
-				}]
-			});
-		</script>
-		<style>
-			/* defaults for all examples */
-			.kwicks {
-				list-style: none;
-				position: relative;
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-			}
-			.kwicks li {
-				display: block;
-				overflow: hidden;
-				padding: 0;
-				cursor: pointer;
-			}
-			.kwicks li {
-				float: left;
-				width: 125px;
-				height: 100px;
-				margin-right: 5px;
-			}
-			.kwicks .kwick1 {
-				background-color: #53b388;
-			}
-			.kwicks .kwick2 {
-				background-color: #5a69a9;
-			}
-			.kwicks .kwick3 {
-				background-color: #c26468;
-			}
-			.kwicks .kwick4 {
-				background-color: #bf7cc7;
-				margin-right: none;
-			}
-		</style>
-	</head>
-	<body>
-		<h2>项目components下的组件</h2>
-		<div>
-			<ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
-				<li class="kwick1"></li>
-				<li class="kwick2"></li>
-				<li class="kwick3"></li>
-				<li class="kwick4"></li>
-			</ul>
-		</div>
-		<a href="#" class="btn">销毁</a>
-		<h2>项目imports下的组件</h2>
-		<div>
-			<ul class="kwicks" bx-name="kwicks" bx-path="imports/etao.ux.x2/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
-				<li class="kwick1"></li>
-				<li class="kwick2"></li>
-				<li class="kwick3"></li>
-				<li class="kwick4"></li>
-			</ul>
-		</div>
-		<h2>brix下标准组件</h2>
-		<div>
-			<ul class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
-				<li class="kwick1"></li>
-				<li class="kwick2"></li>
-				<li class="kwick3"></li>
-				<li class="kwick4"></li>
-			</ul>
-		</div>
-		<script>
-			KISSY.ready(function(S) {
-				KISSY.use('brix/core/pagelet', function(S, Pagelet) {
-					var pagelet = new Pagelet({
-						tmpl : 'body'
-					});
-					pagelet.ready(function(){
-						//debugger;
-						S.one('.btn').on('click',function(){
-							//debugger
-							pagelet.getBrick('ulkwicks1').destroy();
-						});
-					})
-					pagelet.addBehavior();
-				});
-			});
-		</script>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Brix Kwicks Demo</title>
+        <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/p/brix/brix.css" charset="utf-8">
+        <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+        <script src="http://a.tbcdn.cn/p/brix/brix.js"></script>
+        <script>
+            Brix.config({
+                path:'http://a.tbcdn.cn/p/'
+            })
+            KISSY.config({
+                packages : [{
+                    name : "components",
+                    tag : "20120917",
+                    path : "./", //这里可以配置cdn的路径
+                    charset : "utf-8"
+                }, {
+                    name : "imports",
+                    tag : "20120917",
+                    path : "./", //这里可以配置cdn的路径
+                    charset : "utf-8"
+                }]
+            });
+        </script>
+        <style>
+            /* defaults for all examples */
+            .kwicks {
+                list-style: none;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .kwicks li {
+                display: block;
+                overflow: hidden;
+                padding: 0;
+                cursor: pointer;
+            }
+            .kwicks li {
+                float: left;
+                width: 125px;
+                height: 100px;
+                margin-right: 5px;
+            }
+            .kwicks .kwick1 {
+                background-color: #53b388;
+            }
+            .kwicks .kwick2 {
+                background-color: #5a69a9;
+            }
+            .kwicks .kwick3 {
+                background-color: #c26468;
+            }
+            .kwicks .kwick4 {
+                background-color: #bf7cc7;
+                margin-right: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>项目components下的组件</h2>
+        <div>
+            <ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
+                <li class="kwick1"></li>
+                <li class="kwick2"></li>
+                <li class="kwick3"></li>
+                <li class="kwick4"></li>
+            </ul>
+        </div>
+        <a href="#" class="btn">销毁</a>
+        <h2>项目imports下的组件</h2>
+        <div id="container"></div>
+        <div>
+            <ul class="kwicks" bx-name="kwicks" bx-path="imports/etao.ux.x2/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
+                <li class="kwick1"></li>
+                <li class="kwick2"></li>
+                <li class="kwick3"></li>
+                <li class="kwick4"></li>
+            </ul>
+        </div>
+        <h2>brix下标准组件</h2>
+        <div>
+            <ul class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
+                <li class="kwick1"></li>
+                <li class="kwick2"></li>
+                <li class="kwick3"></li>
+                <li class="kwick4"></li>
+            </ul>
+        </div>
+        <script>
+            KISSY.ready(function(S) {
+                KISSY.use('brix/core/pagelet', function(S, Pagelet) {
+                    var pagelet = new Pagelet({
+                        tmpl : 'body'
+                    });
+                    pagelet.ready(function(){
+                        //debugger;
+                        S.one('.btn').on('click',function(){
+                            //debugger
+                            pagelet.getBrick('ulkwicks1').destroy();
+                        });
+                    })
+                    pagelet.addBehavior();
+
+
+                    //html模板载入渲染
+                    var pagelet1 = new Pagelet({
+                        container:'#container',
+                        tmpl:'#tmpl_script',
+                        data:breadcrumbs_data,
+                        autoRender:true
+                    })
+                    pagelet1.addBehavior();
+                });
+            });
+        </script>
+    </body>
+    <script>
+        var breadcrumbs_data ={
+                breadcrumbs_list:[{
+                    text:'首页',
+                    value:'#1234',
+                    first:true
+                },{
+                    dropdown_list:[{
+                            value: "1",
+                            text: "计划列表",
+                            selected:true
+                        },
+                        {
+                            value: "2",
+                            text: "计划列表2"
+                        },
+                        {
+                            value: "3",
+                            text: "计划列表3"
+                        },
+                        {
+                            value: "4",
+                            text: "计划列表4"
+                        }]
+                },{
+                    text:'创意管理',
+                    value:'#44'
+                },{
+                    text:'创意活动五',
+                    value:'#123',
+                    last:true
+                }]
+            };
+    </script>
+    <script type="text/template" id="tmpl_script">
+        <ul bx-name="breadcrumbs" bx-path="imports/etao.ux.x2/breadcrumbs/"  class="breadcrumbs">
+            {{#breadcrumbs_list}}
+            <li class="item{{^text}} item-dropdown{{/text}}{{#last}} last{{/last}}{{#first}} first{{/first}}">
+                {{#text}}
+                    {{#last}}
+                        {{text}}
+                    {{/last}}
+                    {{^last}}
+                    <a href="{{value}}">{{text}}</a>
+                    {{/last}}
+                {{/text}}
+                {{^text}}
+                <div bx-name="dropdown" bx-path="brix/gallery/dropdown/" bx-datakey="dropdown_list" bx-tmpl="dropdown" class="dropdown dropdown-arrow" bx-config="{mode:2}">
+                    {{#dropdown_list}}
+                    {{#selected}}
+                    <span class="dropdown-hd"><a href="#"><span>计划：</span><span value="{{value}}" class="dropdown-text">{{text}}</span></a><i class="iconfont icon-arrow-down">&#459</i></span>
+                    {{/selected}}
+                    {{/dropdown_list}}
+                    <ul class="dropdown-list">
+                        {{#dropdown_list}}
+                        <li class="dropdown-item{{#selected}} dropdown-itemselected{{/selected}}"><span value="{{value}}">{{text}}</span><i class="iconfont icon-ok">&#126</i></li>
+                        {{/dropdown_list}}
+                    </ul>
+                    {{#dropdown_list}}
+                    {{#selected}}
+                    <input name="dd"  value="{{value}}" type="hidden" />
+                    {{/selected}}
+                    {{/dropdown_list}}
+                </div>
+                {{/text}}
+            </li>
+            {{^last}}
+            <li class="item split">
+                <i class="iconfont">&#402</i>
+            </li>
+            {{/last}}
+        {{/breadcrumbs_list}}
+        </ul>
+    </script>
 </html>
