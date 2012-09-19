@@ -1,0 +1,38 @@
+<ul bx-name="breadcrumbs" bx-path="imports/etao.ux.x2/breadcrumbs/"  class="breadcrumbs">
+            {{#breadcrumbs_list}}
+            <li class="item{{^text}} item-dropdown{{/text}}{{#last}} last{{/last}}{{#first}} first{{/first}}">
+                {{#text}}
+                    {{#last}}
+                        {{text}}
+                    {{/last}}
+                    {{^last}}
+                    <a href="{{value}}">{{text}}</a>
+                    {{/last}}
+                {{/text}}
+                {{^text}}
+                <div bx-name="dropdown" bx-path="brix/gallery/dropdown/" bx-datakey="dropdown_list" bx-tmpl="dropdown" class="dropdown dropdown-arrow" bx-config="{mode:2}">
+                    {{#dropdown_list}}
+                    {{#selected}}
+                    <span class="dropdown-hd"><a href="#"><span>计划：</span><span value="{{value}}" class="dropdown-text">{{text}}</span></a><i class="iconfont icon-arrow-down">&#459</i></span>
+                    {{/selected}}
+                    {{/dropdown_list}}
+                    <ul class="dropdown-list">
+                        {{#dropdown_list}}
+                        <li class="dropdown-item{{#selected}} dropdown-itemselected{{/selected}}"><span value="{{value}}">{{text}}</span><i class="iconfont icon-ok">&#126</i></li>
+                        {{/dropdown_list}}
+                    </ul>
+                    {{#dropdown_list}}
+                    {{#selected}}
+                    <input name="dd"  value="{{value}}" type="hidden" />
+                    {{/selected}}
+                    {{/dropdown_list}}
+                </div>
+                {{/text}}
+            </li>
+            {{^last}}
+            <li class="item split">
+                <i class="iconfont">&#402</i>
+            </li>
+            {{/last}}
+        {{/breadcrumbs_list}}
+        </ul>
