@@ -128,13 +128,27 @@ Brix-实际项目
     </div>
 
 
-###xhr同步读取template和data
+####布局
+
+就是普通的完整html代码，可以穿插mustache模板，组件用特殊的占位符号（坑）
+
+####坑
+
+{{$path}}:{{$components/kwicks/}}
+
+* path:完整的组件路径。
+* “$”：可以自行决定用什么，因为在tms里可能会被解析成php的变量
+
+
+###xhr同步读取template.html和data.json
 
 
     KISSY.use('brix/core/pagelet', function(S, Pagelet) {
         var tmpl = S.one('#tmpl_script').html();
-        var pagelet_data = {brixkwick:[1,2,3,4]};
-        tmpl = tmpl.replace(/\{\{\$(.+)?\}\}/ig,function($1,$2){
+        var pagelet_data = {
+            brixkwick:[1,2,3,4] //模板数据
+        };
+        tmpl = tmpl.replace(/\{\{\$(.+)?\}\}/ig,function($1,$2){ //匹配坑的正则
             //$2:正则匹配的路径
             var str = '';
             S.io({
