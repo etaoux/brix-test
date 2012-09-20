@@ -112,11 +112,11 @@ Brix-实际项目
 ###配置布局模板和“坑”
 
     <h2>项目components下的组件</h2>
-    {{$components/kwicks/}} <!-- 项目组件坑 -->
+    {{@components/kwicks/}} <!-- 项目组件坑 -->
     <a href="#" class="btn">销毁</a>
     <h2>项目imports下的组件</h2>
-    {{$imports/etao.ux.x2/breadcrumbs/}}  <!-- 其他项目成熟组件坑 -->
-    {{$imports/etao.ux.x2/kwicks/}}
+    {{@imports/etao.ux.x2/breadcrumbs/}}  <!-- 其他项目成熟组件坑 -->
+    {{@imports/etao.ux.x2/kwicks/}}
     <h2>brix下标准组件</h2>
     <!--不是坑-->
     <div>
@@ -134,10 +134,10 @@ Brix-实际项目
 
 ####坑
 
-{{$path}}:{{$components/kwicks/}}
+{{@path}}:{{@components/kwicks/}}
 
 * path:完整的组件路径。
-* “$”：可以自行决定用什么，因为在tms里可能会被解析成php的变量
+* “@”：可以自行决定用什么，如果和后端语言或则其他模板语言冲突，可以修改
 
 
 ###xhr同步读取template.html和data.json
@@ -148,7 +148,7 @@ Brix-实际项目
         var pagelet_data = {
             brixkwick:[1,2,3,4] //模板数据
         };
-        tmpl = tmpl.replace(/\{\{\$(.+)?\}\}/ig,function($1,$2){ //匹配坑的正则
+        tmpl = tmpl.replace(/\{\{\@(.+)?\}\}/ig,function($1,$2){ //匹配坑的正则
             //$2:正则匹配的路径
             var str = '';
             S.io({

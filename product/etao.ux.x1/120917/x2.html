@@ -69,7 +69,7 @@
             KISSY.use('brix/core/pagelet', function(S, Pagelet) {
                 var tmpl = S.one('#tmpl_script').html();
                 var pagelet_data = {brixkwick:[1,2,3,4]};
-                tmpl = tmpl.replace(/\{\{\$(.+)?\}\}/ig,function($1,$2){
+                tmpl = tmpl.replace(/\{\{\@(.+)?\}\}/ig,function($1,$2){
                     S.log($2);
                     var str = '';
                     S.io({
@@ -99,6 +99,11 @@
                     data:pagelet_data,
                     autoRender:true
                 });
+                pagelet.ready(function(){
+                    S.one('.btn').on('click',function(){
+                        pagelet.getBrick(S.all('.kwicks').item(0).attr('id')).destroy();
+                    });
+                });
                 pagelet.addBehavior();
                 S.log(tmpl);
             });
@@ -106,11 +111,11 @@
     </script>
     <script type="text/template" id="tmpl_script">
         <h2>项目components下的组件</h2>
-        {{$components/kwicks/}}
+        {{@components/kwicks/}}
         <a href="#" class="btn">销毁</a>
         <h2>项目imports下的组件</h2>
-        {{$imports/etao.ux.x2/breadcrumbs/}}
-        {{$imports/etao.ux.x2/kwicks/}}
+        {{@imports/etao.ux.x2/breadcrumbs/}}
+        {{@imports/etao.ux.x2/kwicks/}}
         <h2>brix下标准组件</h2>
         <div>
             <ul class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
