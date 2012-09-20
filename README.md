@@ -101,7 +101,7 @@ Brix-实际项目
             var kwicks1 = pagelet.getBrcik('kwicks1');
             //kwicks1：就和你平常new某个组件的实例对象。
         });
-        pagelet1.addBehavior();
+        //pagelet1.addBehavior();
     });
 
 
@@ -178,7 +178,7 @@ Brix-实际项目
             data:pagelet_data,
             autoRender:true
         });
-        pagelet.addBehavior();
+        //pagelet.addBehavior();
     });
 
 

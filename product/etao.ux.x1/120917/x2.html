@@ -97,14 +97,13 @@
                     container:'body',
                     tmpl:tmpl,
                     data:pagelet_data,
-                    autoRender:true
+                    autoRender:true,
+                    callback:function(){
+                        S.one('.btn').on('click',function(){
+                            pagelet.getBrick(S.all('.kwicks').item(0).attr('id')).destroy();
+                        });
+                    }
                 });
-                pagelet.ready(function(){
-                    S.one('.btn').on('click',function(){
-                        pagelet.getBrick(S.all('.kwicks').item(0).attr('id')).destroy();
-                    });
-                });
-                pagelet.addBehavior();
                 S.log(tmpl);
             });
         });

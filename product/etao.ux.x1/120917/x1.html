@@ -94,17 +94,15 @@
             KISSY.ready(function(S) {
                 KISSY.use('brix/core/pagelet', function(S, Pagelet) {
                     var pagelet = new Pagelet({
-                        tmpl : 'body'
+                        tmpl : 'body',
+                        callback:function(){
+                            //debugger;
+                            S.one('.btn').on('click',function(){
+                                //debugger
+                                pagelet.getBrick('ulkwicks1').destroy();
+                            });
+                        }
                     });
-                    pagelet.ready(function(){
-                        //debugger;
-                        S.one('.btn').on('click',function(){
-                            //debugger
-                            pagelet.getBrick('ulkwicks1').destroy();
-                        });
-                    })
-                    pagelet.addBehavior();
-
 
                     //html模板载入渲染
                     var pagelet1 = new Pagelet({
@@ -112,8 +110,7 @@
                         tmpl:'#tmpl_script',
                         data:breadcrumbs_data,
                         autoRender:true
-                    })
-                    pagelet1.addBehavior();
+                    });
                 });
             });
         </script>
