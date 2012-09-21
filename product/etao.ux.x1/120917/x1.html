@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Brix Kwicks Demo</title>
         <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/p/brix/brix.css" charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="kwicks.css" charset="utf-8">
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
         <script src="http://a.tbcdn.cn/p/brix/brix.js"></script>
         <script>
@@ -24,45 +25,10 @@
                 }]
             });
         </script>
-        <style>
-            /* defaults for all examples */
-            .kwicks {
-                list-style: none;
-                position: relative;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-            .kwicks li {
-                display: block;
-                overflow: hidden;
-                padding: 0;
-                cursor: pointer;
-            }
-            .kwicks li {
-                float: left;
-                width: 125px;
-                height: 100px;
-                margin-right: 5px;
-            }
-            .kwicks .kwick1 {
-                background-color: #53b388;
-            }
-            .kwicks .kwick2 {
-                background-color: #5a69a9;
-            }
-            .kwicks .kwick3 {
-                background-color: #c26468;
-            }
-            .kwicks .kwick4 {
-                background-color: #bf7cc7;
-                margin-right: none;
-            }
-        </style>
     </head>
     <body>
         <h2>项目components下的组件</h2>
-        <div>
+        <div id="example1" style="overflow:hidden">
             <ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
                 <li class="kwick1"></li>
                 <li class="kwick2"></li>
@@ -73,26 +39,12 @@
         <a href="#" class="btn">销毁</a>
         <h2>项目imports下的组件</h2>
         <div id="container"></div>
-        <div>
-            <ul class="kwicks" bx-name="kwicks" bx-path="imports/etao.ux.x2/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
-                <li class="kwick1"></li>
-                <li class="kwick2"></li>
-                <li class="kwick3"></li>
-                <li class="kwick4"></li>
-            </ul>
-        </div>
         <h2>brix下标准组件</h2>
-        <div>
-            <ul class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
-                <li class="kwick1"></li>
-                <li class="kwick2"></li>
-                <li class="kwick3"></li>
-                <li class="kwick4"></li>
-            </ul>
+        <div bx-name="pagination" class="pagination clearfix" bx-config="{pageSizeName:false,statistics:true,sizeChange:true,jump:true,goTo:false}">
         </div>
         <script>
             KISSY.ready(function(S) {
-                KISSY.use('brix/core/pagelet', function(S, Pagelet) {
+                KISSY.use('brix/core/pagelet,brix/gallery/pagination/pagination.css', function(S, Pagelet) {
                     var pagelet = new Pagelet({
                         tmpl : 'body',
                         callback:function(){

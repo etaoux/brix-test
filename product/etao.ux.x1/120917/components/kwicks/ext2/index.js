@@ -1,17 +1,17 @@
-KISSY.add("imports/etao.ux.x2/kwicks/index", function(S, Brick) {
+KISSY.add("components/kwicks/ext2/index", function(S, Brick) {
     function Kwicks() {
         Kwicks.superclass.constructor.apply(this, arguments);
     }
 
     S.extend(Kwicks, Brick, {
         initialize: function() {
-            S.log('initialize');
+            S.log('Kwicks ext2 initialize');
         },
         destructor:function(){
-            S.log('destroy');
+            S.log('Kwicks ext2 destroy');
         }
     });
     return Kwicks;
 }, {
-    requires: ["brix/gallery/kwicks/index"]
+    requires: ["components/kwicks/index"]
 });
