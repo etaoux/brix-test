@@ -10,25 +10,8 @@ Brix-实际项目
 
     <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/p/brix/brix.css" charset="utf-8">
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
-    <script src="http://a.tbcdn.cn/p/brix/brix.js"></script>
-    <script>
-        Brix.config({
-            path:'http://a.tbcdn.cn/p/'
-        })
-        KISSY.config({
-            packages : [{
-                name : "components",
-                tag : "20120917",
-                path : "./", //这里可以配置cdn的路径
-                charset : "utf-8"
-            }, {
-                name : "imports",
-                tag : "20120917",
-                path : "./", //这里可以配置cdn的路径
-                charset : "utf-8"
-            }]
-        });
-    </script>
+    <!-- 自动读取节点配置 -->
+    <script src="http://a.tbcdn.cn/p/brix/brix.js" bx-config="{autoConfig:true,componentsPath:'./',importsPath:'./'}"></script>
 
 
 ##快速实现组件调用
@@ -112,20 +95,18 @@ Brix-实际项目
 ###配置布局模板和“坑”
 
     <h2>项目components下的组件</h2>
-    {{@components/kwicks/}} <!-- 项目组件坑 -->
-    <a href="#" class="btn">销毁</a>
-    <h2>项目imports下的组件</h2>
-    {{@imports/etao.ux.x2/breadcrumbs/}}  <!-- 其他项目成熟组件坑 -->
-    {{@imports/etao.ux.x2/kwicks/}}
-    <h2>brix下标准组件</h2>
-    <!--不是坑-->
-    <div>
-        <ul class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
-            {{#brixkwick}}
-            <li class="kwick{{.}}"></li>
-            {{/brixkwick}}
-        </ul>
+    <h4>ext1</h4>
+    <div id="example1">
+        {{@components/kwicks/ext1/}}
     </div>
+    <a href="#" class="btn">销毁</a>
+    <h4>ext2</h4>
+    <div id="example7">
+        {{@components/kwicks/ext2/}}
+    </div>
+    <h2>项目imports下的组件</h2>
+    <h4>ext1</h4>
+    {{@imports/etao.ux.x2/breadcrumbs/ext1/}}
 
 
 ####布局
@@ -144,42 +125,48 @@ Brix-实际项目
 
 
     KISSY.use('brix/core/pagelet', function(S, Pagelet) {
-        var tmpl = S.one('#tmpl_script').html();
-        var pagelet_data = {
-            brixkwick:[1,2,3,4] //模板数据
-        };
-        tmpl = tmpl.replace(/\{\{\@(.+)?\}\}/ig,function($1,$2){ //匹配坑的正则
-            //$2:正则匹配的路径
-            var str = '';
-            S.io({
-                url:$2+'template.html',
-                async:false,
-                success:function(data , textStatus , xhrObj){
-                    str = data;
-                }
-            });
+                var tmpl = S.one('#tmpl_script').html();
+                var pagelet_data = {};
+                var s = '@';
+                reg = new RegExp('\{\{'+s+'(.+)?\}\}',"ig");
+                tmpl = tmpl.replace(reg,function($1,$2){
+                    S.log($2);
+                    var str = '';
+                    var p = $2.replace(/\//ig,'_').replace(/\./ig,'_');
+                    pagelet_data[p] = pagelet_data[p] || {};
+                    S.io({
+                        url:$2+'template.html',
+                        async:false,
+                        success:function(data , textStatus , xhrObj){
+                            str = '{{#'+p+'}}' + data+'{{/'+p+'}}';
+                        }
+                    });
+                    S.io({
+                        url:$2+'data.json',
+                        async:false,
+                        dataType:'json',
+                        success:function(data , textStatus , xhrObj){
+                            for(var k in data){
+                                pagelet_data[p][k] = data[k];
+                            }
+                        }
+                    });
+                    return str;
+                });
 
-            S.io({
-                url:$2+'data.json',
-                async:false,
-                dataType:'json',
-                success:function(data , textStatus , xhrObj){
-                    for(var k in data){
-                        pagelet_data[k] = data[k];
+                var pagelet = new Pagelet({
+                    container:'body',
+                    tmpl:tmpl,
+                    data:pagelet_data,
+                    autoRender:true,
+                    callback:function(){
+                        S.one('.btn').on('click',function(){
+                            pagelet.getBrick(S.all('.kwicks').item(0).attr('id')).destroy();
+                        });
                     }
-                }
+                });
+                S.log(tmpl);
             });
-            return str;
-        });
-        //同样适用pagelet渲染
-        var pagelet = new Pagelet({
-            container:'body',
-            tmpl:tmpl,
-            data:pagelet_data,
-            autoRender:true
-        });
-        //pagelet.addBehavior();
-    });
 
 
 
