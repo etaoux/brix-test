@@ -8,10 +8,10 @@ Brix-实际项目
 
 ##配置初始化
 
-    <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/p/brix/brix.css" charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/brix.css" charset="utf-8">
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
     <!-- 自动读取节点配置 -->
-    <script src="http://a.tbcdn.cn/p/brix/brix.js" bx-config="{autoConfig:true,componentsPath:'./',importsPath:'./'}"></script>
+    <script src="http://a.tbcdn.cn/apps/e/brix/brix.js" bx-config="{autoConfig:true,componentsPath:'./',importsPath:'./'}"></script>
 
 
 ##快速实现组件调用
