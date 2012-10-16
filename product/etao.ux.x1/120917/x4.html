@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Brix 单个组件使用 Demo</title>
+        <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/brix.css" charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="kwicks.css" charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="switchable.css" charset="utf-8">
+        <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
+        <script src="http://a.tbcdn.cn/apps/e/brix/brix.js" bx-config="{autoConfig:true,autoPagelet:true}"></script>
+    </head>
+    <body>
+        <h2>项目components下的组件</h2>
+        <div id="example1" style="overflow:hidden">
+            <ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
+                <li class="kwick1"></li>
+                <li class="kwick2"></li>
+                <li class="kwick3"></li>
+                <li class="kwick4"></li>
+            </ul>
+        </div>
+        <a href="#" class="btn">销毁</a>
+        <h2>brix下标准组件</h2>
+        <div bx-name="pagination" class="pagination clearfix" bx-config="{pageSizeName:false,statistics:true,sizeChange:true,jump:true,goTo:false}">
+        </div>
+
+        <h2>kissy 组件采用brix方式加载</h2>
+        <div bx-name="switchable" bx-config="{switchType:'Slide',effect : 'scrolly',easing : 'easeOutStrong'}"  id="J_Slide" class="loading">
+            <ol class="ks-switchable-content">
+                <li><a href="#" target="_blank"><img alt="" src="http://img05.taobaocdn.com/tps/i5/T1HllqXjXpXXXXXXXX-470-150.jpg"/></a></li>
+                <li class="hidden"><a target="_blank" href="#"><img alt="" width="470" height="150" border="0" src="http://img.alimama.cn/bcrm/adboard/picture/2009-12-24/091224170529.gif"/></a></li>
+                <li class="hidden"><a target="_blank" href="#"><img alt="" width="470" height="150" border="0" src="http://img.alimama.cn/bcrm/adboard/picture/2009-12-29/091229160359.jpg"/></a></li>
+                <li class="hidden"><a href="#" target="_blank"><img alt="" src="http://img01.taobaocdn.com/tps/i1/T1qS0qXhBhXXXXXXXX-470-150.jpg"/></a></li>
+                <li class="hidden">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="470" height="150" class="holiday-logo">
+                        <param name="movie" value="http://img04.taobaocdn.com/tps/i4/T1bblrXfBrXXXXXXXX.swf"/>
+
+                        <param name="quality" value="high"/>
+                        <param name="swfversion" value="8.0.0"/>
+                        <param name="wmode" value="opaque"/>
+                        <!--[if !IE]>-->
+                        <object type="application/x-shockwave-flash" data="http://img04.taobaocdn.com/tps/i4/T1bblrXfBrXXXXXXXX.swf" width="470" height="150" name="holiday-logo" class="holiday-logo">
+                            <param name="wmode" value="opaque"/>
+                        </object>
+                        <!--<![endif]-->
+                    </object>
+                </li>
+            </ol>
+        </div>
+        <script>
+            KISSY.ready(function(S) {
+                KISSY.use('brix/gallery/pagination/pagination.css,brix/gallery/dropdown/dropdown.css', function(S) {
+                    //Brix.pagelet当前页面Pagelet的实例
+                    Brix.pagelet.ready(function(){
+                        S.one('.btn').on('click',function(){
+                            Brix.pagelet.getBrick('ulkwicks1').destroy();
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
