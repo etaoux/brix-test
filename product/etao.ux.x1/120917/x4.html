@@ -8,6 +8,21 @@
         <link type="text/css" rel="stylesheet" href="switchable.css" charset="utf-8">
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
         <script src="http://a.tbcdn.cn/apps/e/brix/brix.js" bx-config="{autoConfig:true,autoPagelet:true}"></script>
+        <script>
+            KISSY.ready(function(S) {
+                KISSY.use('brix/gallery/pagination/pagination.css,brix/gallery/dropdown/dropdown.css', function(S) {
+                    Brix.ready(function() {
+                        //Brix.pagelet当前页面Pagelet的实例
+                        Brix.pagelet.ready(function(){
+                            S.one('.btn').on('click',function(){
+                                Brix.pagelet.getBrick('ulkwicks1').destroy();
+                            });
+                        });
+                    });
+                });
+            });
+        </script>
+
     </head>
     <body>
         <h2>项目components下的组件</h2>
@@ -47,17 +62,7 @@
                 </li>
             </ol>
         </div>
-        <script>
-            KISSY.ready(function(S) {
-                KISSY.use('brix/gallery/pagination/pagination.css,brix/gallery/dropdown/dropdown.css', function(S) {
-                    //Brix.pagelet当前页面Pagelet的实例
-                    Brix.pagelet.ready(function(){
-                        S.one('.btn').on('click',function(){
-                            Brix.pagelet.getBrick('ulkwicks1').destroy();
-                        });
-                    });
-                });
-            });
-        </script>
+        
     </body>
+    
 </html>
