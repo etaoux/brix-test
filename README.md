@@ -8,10 +8,10 @@ Brix-实际项目
 
 ##配置初始化
 
-    <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/brix.css" charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/1.0/brix.css" charset="utf-8">
     <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
     <!-- 自动读取节点配置 -->
-    <script src="http://a.tbcdn.cn/apps/e/brix/brix.js" bx-config="{autoConfig:true,componentsPath:'./',importsPath:'./'}"></script>
+    <script src="http://a.tbcdn.cn/apps/e/brix/1.0/brix.js" bx-config="{componentsPath:'./',importsPath:'./'}"></script>
 
 
 ##快速实现组件调用
@@ -27,7 +27,7 @@ Brix-实际项目
 
 * 定义模板、配置hooks
 
-模板一
+gallery模板一
 
     <div>
         <ul id="kwicks1" class="kwicks" bx-name="kwicks" bx-config="{max:205,spacing:5,autoplay:true}">
@@ -37,21 +37,22 @@ Brix-实际项目
         </ul>
     </div>
 
-模板二
-
+components模板二
+    
     <div>
-        <ul class="kwicks" bx-name="kwicks" bx-path="imports/etao.ux.x2/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
+        <ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
             <li class="kwick1"></li>
             <li class="kwick2"></li>
             <li class="kwick3"></li>
             <li class="kwick4"></li>
         </ul>
     </div>
+    
 
-模板三
+imports模板三
 
     <div>
-        <ul id="ulkwicks1" class="kwicks" bx-name="kwicks" bx-path="components/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
+        <ul class="kwicks" bx-name="kwicks" bx-path="imports/etao.ux.x2/kwicks/" bx-config="{max:205,spacing:5,autoplay:true}">
             <li class="kwick1"></li>
             <li class="kwick2"></li>
             <li class="kwick3"></li>
@@ -73,10 +74,11 @@ Brix-实际项目
 
     KISSY.use('brix/core/pagelet', function(S, Pagelet) {
         var pagelet = new Pagelet({
-            container:'#container',//容器
-            tmpl:'#tmpl_script',//模板来源
-            data:breadcrumbs_data,//数据
-            autoRender:true //是否自动渲染，如果false，则需手工调用render方法
+            container:'#container',//容器 //如果tmpl自定的节点（非script节点）已经在dom中，则不需要容器
+            tmpl:'#tmpl_script',//模板来源，也可以是页面已经存在的dom节点
+            data:pagelet_data,//数据
+            autoRender:true， //是否自动渲染，如果false，则需手工调用render方法
+            behavior:true //是否自动构建组件，如果false，则需手工调用addBehavior方法
         })；
         //pagelet.render();
         pagelet.ready(function(){
