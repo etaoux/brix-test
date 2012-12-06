@@ -15,39 +15,15 @@
     <script>
         KISSY.ready(function(S) {
             KISSY.use('brix/core/pagelet', function(S, Pagelet) {
+                //获取坑模板
                 var tmpl = S.one('#tmpl_script').html();
-                var pagelet_data = {};
-                var s = '@';
-                reg = new RegExp('\{\{'+s+'(.+)?\}\}',"ig");
-                tmpl = tmpl.replace(reg,function($1,$2){
-                    S.log($2);
-                    var str = '';
-                    var p = $2.replace(/\//ig,'_').replace(/\./ig,'_');
-                    pagelet_data[p] = pagelet_data[p] || {};
-                    S.io({
-                        url:$2+'template.html',
-                        async:false,
-                        success:function(data , textStatus , xhrObj){
-                            str = '{{#'+p+'}}' + data+'{{/'+p+'}}';
-                        }
-                    });
-                    S.io({
-                        url:$2+'data.json',
-                        async:false,
-                        dataType:'json',
-                        success:function(data , textStatus , xhrObj){
-                            for(var k in data){
-                                pagelet_data[p][k] = data[k];
-                            }
-                        }
-                    });
-                    return str;
-                });
+                //获取坑模板对应的真实模板和数据。
+                var pageletTmplData = Brix.getPageletTmplData(tmpl);
 
                 var pagelet = new Pagelet({
                     container:'body',
-                    tmpl:tmpl,
-                    data:pagelet_data,
+                    tmpl:pageletTmplData.tmpl,
+                    data:pageletTmplData.data,
                     autoRender:true,
                     callback:function(){
                         S.one('.btn').on('click',function(){
