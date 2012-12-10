@@ -6,7 +6,7 @@
         <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/1.0/brix.css" charset="utf-8">
         <link type="text/css" rel="stylesheet" href="kwicks.css" charset="utf-8">
         <script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy.js"></script>
-        <script src="http://a.tbcdn.cn/apps/e/brix/1.0/brix.js" bx-config="{componentsPath:'./',importsPath:'./'}"></script>
+        <script src="http://a.tbcdn.cn/apps/e/brix/1.0/brix-min.js" bx-config="{componentsPath:'./',importsPath:'./'}"></script>
     </head>
     <body>
         
@@ -14,17 +14,16 @@
     </body>
     <script>
         KISSY.ready(function(S) {
-            KISSY.use('brix/core/pagelet', function(S, Pagelet) {
+            KISSY.use('brix/core/demolet', function(S, Demolet) {
                 //获取坑模板
                 var tmpl = S.one('#tmpl_script').html();
                 //获取坑模板对应的真实模板和数据。
-                var pageletTmplData = Brix.getPageletTmplData(tmpl);
+                //var pageletTmplData = Brix.getPageletTmplData(tmpl);
 
-                var pagelet = new Pagelet({
+                var pagelet = new Demolet({
                     container:'body',
-                    tmpl:pageletTmplData.tmpl,
-                    data:pageletTmplData.data,
-                    autoRender:true,
+                    data:{test:1},
+                    tmpl:tmpl,
                     callback:function(){
                         S.one('.btn').on('click',function(){
                             pagelet.getBrick(S.all('.kwicks').item(0).attr('id')).destroy();
