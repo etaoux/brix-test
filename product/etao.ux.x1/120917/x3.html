@@ -17,12 +17,9 @@
             KISSY.use('brix/core/demolet', function(S, Demolet) {
                 //获取坑模板
                 var tmpl = S.one('#tmpl_script').html();
-                //获取坑模板对应的真实模板和数据。
-                //var pageletTmplData = Brix.getPageletTmplData(tmpl);
-
                 var pagelet = new Demolet({
                     container:'body',
-                    data:{test:1},
+                    data:{test:'我是测试数据'},//测试数据
                     tmpl:tmpl,
                     callback:function(){
                         S.one('.btn').on('click',function(){
@@ -35,6 +32,7 @@
         });
     </script>
     <script type="text/template" id="tmpl_script">
+        测试数据：{{test}}
         <h2>项目components下的组件</h2>
         <h4>ext1</h4>
         <div id="example1">
