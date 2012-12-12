@@ -1,0 +1,1 @@
+var list=["kwicks","newproduct","_grid-same-style-list_","_supplement-promotion_"]
