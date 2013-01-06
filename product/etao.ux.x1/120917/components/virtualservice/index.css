@@ -1,0 +1,377 @@
+﻿.ks-fee-nav {
+    border: 1px solid #EEE;
+    border-bottom: none;
+}
+
+
+.virtual-service .bd {
+	padding:0 20px;
+}
+/*.virtual-border {
+    border: 1px solid #EEE;
+}*/
+li.ks-fee-active {
+    color: #333;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+.virtual-sep {
+    border-right: 1px solid #EEE;
+}
+.virtual-item {
+    float: left;
+    width: 60px;
+    height: 21px;
+    line-height: 21px;
+    color: #999;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #EEE;
+}
+.virtual-service-item {
+    width: 198px;
+    height: 178px;
+    background: url(http://img03.taobaocdn.com/tps/i3/T1aEDFXmtcXXbXZv2c-27-10.gif) no-repeat 50% 50%;
+}
+
+/*for qq*/
+.tcc-hidden {
+    display: none;
+}
+.virtual-phone .tcc-loading {
+    background: url(http://img02.taobaocdn.com/tps/i2/T1ZJiKXdphXXXXXXXX-16-16.gif) no-repeat 0 0 transparent;
+    padding-left: 20px;
+    color: #f60;
+}
+.virtual-phone .tcc-phone {
+    overflow: hidden;
+}
+.virtual-phone .tcc-phone a:hover {
+    text-decoration: none;
+}
+.virtual-phone .tcc-phone label {
+    cursor: pointer;
+}
+.virtual-phone .tcc-block {
+    overflow: hidden;
+}
+.virtual-phone .tcc-block .tcc-block-hd {
+    float: left;
+    text-align: right;
+}
+.virtual-phone .tcc-block .tcc-block-hd label,
+.virtual-phone .tcc-block .tcc-block-hd span {
+    display: block;
+}
+.virtual-phone .tcc-block .tcc-block-bd {
+    float: left;
+}
+.virtual-phone .tcc-result .tcc-success {
+    color: #f60;
+}
+.tcc-overlay {
+    position: absolute;
+    overflow: hidden;
+}
+.tcc-overlay .tcc-overlay-wrapper {
+    border: 1px solid;
+}
+.tcc-overlay .tcc-overlay-wrapper p.tcc-hidden {
+    display: none;
+}
+.tcc-phone-history-trigger {
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+}
+.virtual-phone .input_radio {
+    vertical-align: top;
+    width: 13px;
+    height: 13px;
+}
+.virtual-phone input::-webkit-input-placeholder {
+    color: #999;
+}
+.virtual-phone input:-moz-placeholder {
+    color: #999;
+}
+.virtual-phone input.placeholder {
+    color: #999;
+}
+.virtual-phone .tcc-loading {
+    background-image: url(http://img03.taobaocdn.com/tps/i3/T1aEDFXmtcXXbXZv2c-27-10.gif);
+    padding-left: 30px;
+}
+.virtual-phone .tcc-phone {
+    padding-top: 28px;
+    width: 198px;
+    height: 164px;
+    font-size: 12px;
+    color: #333333;
+}
+.virtual-phone .tcc-phone a {
+    color: #0066dd;
+}
+.virtual-phone .tcc-phone a:hover {
+    color: #ff6600;
+}
+.virtual-phone .tcc-block {
+    width: 100%;
+}
+.virtual-phone .tcc-block .tcc-block-hd {
+    width: 56px;
+    line-height: 23px;
+    height: 23px;
+}
+.virtual-phone .tcc-block .tcc-block-bd {
+    width: 130px;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd {
+    height: 51px;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .input-text {
+    vertical-align: top;
+    border: 1px solid #cccccc;
+    /*border-top: 2px solid #ccc;*/
+
+    width: 103px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    padding: 4px 0 3px 5px;
+    color: #333333;
+    float: left;
+    outline: none;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .input-text.tcc-active {
+    border-color: #6eaeee;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg {
+    float: left;
+    height: 28px;
+    width: 100%;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg span,
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg a {
+    line-height: 28px;
+    display: block;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg .tcc-msg-tip {
+    color: #999;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg .tcc-msg-error {
+    color: #ff8400;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg .tcc-msg-info {
+    color: #06d;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-msg .tcc-loading {
+    background-position: 0 9px;
+    color: #999;
+}
+.virtual-phone .tcc-phone-number .tcc-block-bd .tcc-info {
+    float: left;
+    color: #f60;
+}
+.tcc-phone-denom .tcc-block-hd {
+    line-height: 23px;
+}
+.tcc-phone-denom .tcc-block-bd select {
+    height: 23px;
+}
+.virtual-phone .tcc-result .tcc-block-hd {
+    padding-top: 8px;
+    line-height: 18px;
+    height: 18px;
+}
+.virtual-phone .tcc-result .tcc-block-bd {
+    padding-top: 8px;
+    height: 50px;
+}
+.virtual-phone .tcc-result .tcc-block-bd .tcc-success {
+    color: #ff8400;
+    font-weight: bold;
+    line-height: 16px;
+}
+.virtual-phone .tcc-result .tcc-block-bd .tcc-success p {
+    margin-bottom: 1px;
+}
+.virtual-phone .tcc-result .tcc-block-bd .tcc-stockout {
+    color: #06d;
+}
+.virtual-phone .tcc-result .tcc-block-bd .tcc-error {
+    width: 35px;
+    height: 1px;
+    display: block;
+    vertical-align: top;
+    margin: 19px 0 0 37px;
+    text-align: left;
+    text-indent: -9999px;
+}
+.virtual-phone .tcc-result .tcc-block-bd .tcc-loading {
+    display: block;
+    line-height: 1.5;
+    background-position: 0 4px;
+    color: #999;
+}
+.virtual-phone .tcc-submit .tcc-form-main {
+    padding-left: 10px;
+}
+.virtual-phone .tcc-submit .tcc-form-main .tcc-btn {
+    text-indent: -9999px;
+    text-align: left;
+    background: url(http://img04.taobaocdn.com/tps/i4/T1YeYEXd8gXXXPP8jm-69-42.png) 0 0 transparent;
+    width: 69px;
+    height: 21px;
+    float: left;
+    overflow: hidden;
+}
+.virtual-phone .tcc-submit .tcc-form-main .tcc-btn.tcc-disabled {
+    background-position: 0 -21px;
+}
+.virtual-phone .tcc-submit .tcc-form-main .tcc-tip,
+.virtual-phone .tcc-submit .tcc-form-main .tcc-ad {
+    line-height: 21px;
+    margin-left: 5px;
+    float: left;
+}
+.virtual-phone .tcc-submit .tcc-form-main .tcc-tip {
+    color: #999;
+}
+.tcc-overlay-phone {
+    width: 110px;
+    height: 47px;
+}
+.tcc-overlay-phone .tcc-overlay-wrapper {
+    border-color: #6eaeee;
+    background-color: #fff;
+}
+.tcc-overlay-phone .tcc-overlay-wrapper p {
+    line-height: 22px;
+    font-size: 12px;
+    text-indent: 4px;
+}
+.tcc-overlay-phone .tcc-overlay-wrapper p.number {
+    color: #49e;
+    border-bottom: 1px solid #d9d9d9;
+    font-weight: bold;
+}
+.tcc-overlay-phone .tcc-overlay-wrapper p.tip {
+    color: #999;
+}
+.tcc-phone-history-trigger {
+    width: 0;
+    height: 0;
+    border: 4px solid #fff;
+    border-top-color: #666;
+    margin-top: 3px;
+}
+.tcc-phone-history-menu {
+    position: absolute;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+    width: 108px;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item {
+    position: relative;
+    height: 23px;
+    overflow: hidden;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-remove {
+    width: 9px;
+    height: 8px;
+    background: url(http://img04.taobaocdn.com/tps/i4/T1DfDFXf4hXXX3nwbb-9-16.png) 0 0 no-repeat transparent;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    display: none;
+    overflow: hidden;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-remove:hover {
+    background-position: 0 -8px;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-item {
+    border-bottom: 1px solid #dddddd;
+    line-height: 23px;
+    display: block;
+    text-decoration: none;
+    text-indent: 5px;
+    color: #999;
+    background-color: #fff;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-item:hover,
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-item.tcc-active {
+    color: #fff;
+    background-color: #49e;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item .tcc-item.tcc-last {
+    border-bottom: none;
+}
+.tcc-phone-history-menu .tcc-list .tcc-list-item.tcc-active .tcc-remove {
+    display: block;
+}
+.virtual-phone .tcc-phone .tcc-menu-label {
+    width: 110px;
+    height: 21px;
+    border: 1px solid #ccc;
+    position: relative;
+    cursor: default;
+}
+.virtual-phone .tcc-phone .tcc-menu-label .tcc-menu-value {
+    display: block;
+    line-height: 21px;
+    color: #666;
+    text-indent: 5px;
+}
+.virtual-phone .tcc-phone .tcc-menu-label .tcc-menu-trigger {
+    width: 6px;
+    height: 6px;
+    /*overflow: hidden;*/
+    position: absolute;
+    right: 5px;
+    top: 8px;
+}
+.virtual-phone .tcc-phone .tcc-menu-label .tcc-menu-trigger .tcc-menu-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 4px solid #fff;
+    border-top-color: #666;
+}
+.tcc-phone-denom-menu.tcc-menu {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-top: none;
+    cursor:default;
+}
+.tcc-phone-denom-menu.tcc-menu .tcc-menu-item {
+    width: 110px;
+    line-height: 23px;
+    text-indent: 5px;
+    color: #333;
+    background-color: #fff;
+}
+.tcc-phone-denom-menu.tcc-menu .tcc-menu-item.tcc-hover,
+.tcc-phone-denom-menu.tcc-menu .tcc-menu-item.tcc-selected {
+    color: #fff;
+    background-color: #49e;
+}
+.virtual-phone .tcc-submit .tcc-form-main .tcc-tip {
+    color: #06D;
+}
+.virtual-phone .hc-info-jf b.hc-info-jf-point {
+    color: #fff;
+}
+ul.tcc-menu.tcc-qq-menu  {
+    color: #333;
+}
+.virtual-service-item .tcc-phone,.tcc-qq {
+    background-color: white;
+}
+.virtual-service .trip-search, .virtual-service .tcc-container {
+    padding-top: 28px;
+}
+.virtual-service .tcc-qq .tcc-menu-label,
+ ul.tcc-menu.tcc-qq-menu .tcc-menu-item {
+   width: 108px;
+}

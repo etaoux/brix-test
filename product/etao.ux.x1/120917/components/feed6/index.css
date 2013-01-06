@@ -1,0 +1,69 @@
+﻿.feed6 .feed-item-list {
+    position: relative;
+    height: 420px;
+    background: #fff url(http://img01.taobaocdn.com/tps/i1/T1xb.jXnXcXXXGu0rW-620-420.png) no-repeat;
+
+    *zoom: 1;
+}
+.feed6 .feed-item-list li {
+    position: absolute;
+}
+.feed6 .feed-item-list .feed-item-img {
+    margin: 0;
+}
+.feed6 .feed-item-list .feed-item-meta p {
+    margin: 0;
+}
+
+.feed6 .feed-item-list .feed-item-1,
+.feed6 .feed-item-list .feed-item-3 {
+    left: 0;
+}
+.feed6 .feed-item-list .feed-item-1 .feed-item-img,
+.feed6 .feed-item-list .feed-item-3 .feed-item-img {
+    float: left;
+    margin-right: 5px;
+}
+.feed6 .feed-item-list .feed-item-1 .feed-item-meta,
+.feed6 .feed-item-list .feed-item-3 .feed-item-meta {
+    margin-top: 40px;
+    float: left;
+}
+
+.feed6 .feed-item-list .feed-item-2,
+.feed6 .feed-item-list .feed-item-4 {
+    right: 0;
+}
+.feed6 .feed-item-list .feed-item-2 .feed-item-img,
+.feed6 .feed-item-list .feed-item-4 .feed-item-img {
+    float: right;
+    margin-left: 5px;
+}
+.feed6 .feed-item-list .feed-item-2 .feed-item-meta,
+.feed6 .feed-item-list .feed-item-4 .feed-item-meta {
+    margin-top: 40px;
+    float: right;
+}
+
+.feed6 .feed-item-list .feed-item-1,
+.feed6 .feed-item-list .feed-item-2 {
+    top: 0;
+}
+
+.feed6 .feed-item-list .feed-item-3,
+.feed6 .feed-item-list .feed-item-4 {
+    bottom: 5px;
+}
+.feed6 .feed-item-list .feed-item-3 .feed-item-meta,
+.feed6 .feed-item-list .feed-item-4 .feed-item-meta {
+    margin-top: 105px;
+}
+
+.feed6 .feed-item-list .feed-item-5 {
+    left: 230px;
+    top: 100px;
+}
+.feed6 .feed-item-list .feed-item-5 .feed-item-meta p {
+    text-align: center;
+}
+

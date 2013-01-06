@@ -1,0 +1,35 @@
+﻿<div class="feed">
+    <div class="module feed6">
+        <div class="feed-hd">
+            <s class="feed-tag"></s>
+            <h3 class="feed-title"><a href="#" title="{{title}}">{{title}}</a></h3>
+        </div>
+
+        <div class="feed-bd">
+            <div class="feed-desc">
+                {{#desc}}
+                <p>{{text}}</p>
+                {{/desc}}
+            </div>
+
+            <div class="feed-cnt">
+                <ul class="feed-item-list clearfix">
+                    {{#itemList}}
+                    <li class="feed-item-{{num}}">
+                        <div class="feed-item-img">
+                            <a href="{{href}}" title="{{cnt}}">
+                                <img data-ks-lazyload="{{src}}" width="155" height="190" />
+                            </a>
+                        </div>
+
+                        <div class="feed-item-meta">
+                            <p><a href="{{href}}" title="{{cnt}}">{{cnt}}</a></p>
+                            <p><strong class="feed-price"><i>&yen;</i>{{price}}</strong></p>
+                        </div>
+                    </li>
+                    {{/itemList}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

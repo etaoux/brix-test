@@ -1,0 +1,80 @@
+﻿.hot-quan {
+	overflow:hidden;
+	position:relative;
+}
+.hot-quan .bd {
+	text-align: center;
+}
+.hot-quan .text {
+	color: #999;
+}
+.hot-quan .side h4 {
+	line-height: 1.8;
+	margin: 0 10px;
+}
+.hot-quan .side h4 a {
+	color: #333;
+}
+
+.hot-quan .num {
+	letter-spacing: 4px;
+	color: #666;
+	margin-top: 10px;
+}
+.hot-quan .num strong {
+	font-weight: normal;
+	color: #3a7bed;
+}
+.hot-quan .bd img {
+	margin-bottom: 10px;
+}
+/* 骞荤伅鐗?*/
+.hot-quan .side {
+	position: relative;
+    *zoom: 1;
+}
+.hot-quan .side .scroller {
+    width: 188px;
+    height: 199px;
+    margin: 0 20px;
+    overflow: hidden;
+    position: relative;
+}
+/* 骞荤伅鐗囧垏鎹㈠姩鐢?*/
+.hot-quan .side .side-list {
+	/*-webkit-transition: all .3s linear;*/
+	/*-moz-transition: all .3s linear;*/
+	/*-ms-transition: all .3s linear;*/
+	/*-o-transition: all .3s linear;*/
+	/*transition: all .3s linear;*/
+}
+.hot-quan .side .side-list {
+	/*width: 1000%;*/
+    position: absolute;
+    left: 0;
+}
+.hot-quan .side .side-list li {
+	/*width: 10%;*/
+    width: 188px;
+    height: 199px;
+    overflow: hidden;
+}
+.hot-quan .slide-trigger {
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	color: #dedede;
+	height: 150px;
+	line-height: 150px;
+	text-decoration: none;
+}
+.hot-quan .slide-trigger:hover {
+	color: #377bee !important;
+	text-decoration: none;
+}
+.hot-quan .slide-prev {
+	left: 3px;
+}
+.hot-quan .slide-next {
+	right: 4px;
+}

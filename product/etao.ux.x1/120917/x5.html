@@ -3,9 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Brix Demolet</title>
-        <link type="text/css" rel="stylesheet" href="http://assets.etao.net/apps/e/ninja/??121201/global.css,121201/srpbase.css,121201/components/components.css" charset="utf-8">
         <link type="text/css" rel="stylesheet" href="http://a.tbcdn.cn/apps/e/brix/1.0/brix-min.css" charset="utf-8">
-        <script src="http://a.tbcdn.cn/s/kissy/1.3.0rc/seed.js"></script>
+        <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed.js"></script>
         <script src="http://a.tbcdn.cn/apps/e/brix/1.0/brix.js" bx-config="{componentsPath:'./',importsPath:'./'}"></script>
         <script src="data.js"></script>
         <script type="text/javascript">
@@ -14,11 +13,12 @@
         <style type="text/css">
             .btn:hover{text-decoration: none}
             .navlist{padding: 15px;}
-            .navlist li{float: left;margin: 0 5px;}
+            .navlist li{float: left;margin  : 5px 5px;}
         </style>
     </head>
     <script type="text/javascript">
         KISSY.ready(function(S) {
+            //实例化按钮
             KISSY.use('brix/core/pagelet', function(S, Pagelet) {
                 new Pagelet({
                     container:'.navlist',
@@ -26,12 +26,22 @@
                     tmpl:'#tmpl'
                 });
             });
+            //配置项目样式包路径
+            KISSY.config({
+                packages:[
+                    {
+                        name:"style",
+                        path:"./"
+                    }
+                ]
+            });
             var path = location.search.replace(/^\?/, '');
             if(path){
+                //组件展现
                 KISSY.use('brix/core/demolet', function(S, Demolet) {
-                    S.use('components/'+path+'/index.css',function(){});
                     var tmpl = '{{@components/'+path+'/}}';
                     var pagelet = new Demolet({
+                        projectCss:'style/style.css',//项目样式路径
                         container:'.container',
                         tmpl:tmpl
                     });

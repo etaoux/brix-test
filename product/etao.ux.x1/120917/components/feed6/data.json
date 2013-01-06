@@ -1,0 +1,43 @@
+﻿{
+    "title": "MYHABIT圣诞大促开启  一淘海淘 10日1时更新",
+    "desc": {
+        "text": "又到了国际打折品牌预告的时间了，新一期MYHABIT将更新的女款有美国著名成衣品牌LONDON FOG伦敦雾的皮包，品质跟它经典耐穿的的服饰一样优秀。还有外形有趣、天然香味浓郁有深层组润肌肤的美国著名Me! Bath沐浴产品。"
+    },
+    "itemList": [
+        {
+            "src": "http://img.f2e.taobao.net/img.png?x=155x190",
+            "href": "#",
+            "cnt": "表韩版简约石英表1",
+            "price": "120.5",
+            "num": 1
+        },
+        {
+            "src": "http://img.f2e.taobao.net/img.png?x=155x190",
+            "href": "#",
+            "cnt": "表韩版简约石英表2",
+            "price": "120.5",
+            "num": 2
+        },
+        {
+            "src": "http://img.f2e.taobao.net/img.png?x=155x190",
+            "href": "#",
+            "cnt": "表韩版简约石英表3",
+            "price": "120.5",
+            "num": 3
+        },
+        {
+            "src": "http://img.f2e.taobao.net/img.png?x=155x190",
+            "href": "#",
+            "cnt": "表韩版简约石英表4",
+            "price": "120.5",
+            "num": 4
+        },
+        {
+            "src": "http://img.f2e.taobao.net/img.png?x=155x190",
+            "href": "#",
+            "cnt": "表韩版简约石英表5",
+            "price": "120.5",
+            "num": 5
+        }
+    ]
+}

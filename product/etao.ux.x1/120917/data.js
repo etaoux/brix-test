@@ -1,1 +1,1 @@
-var list=["kwicks","newproduct","_grid-same-style-list_","_supplement-promotion_"]
+var list=["feed6","hotquan","kwicks","newproduct","virtualservice"]
