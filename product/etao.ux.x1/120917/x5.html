@@ -26,22 +26,13 @@
                     tmpl:'#tmpl'
                 });
             });
-            //配置项目样式包路径
-            KISSY.config({
-                packages:[
-                    {
-                        name:"style",
-                        path:"./"
-                    }
-                ]
-            });
             var path = location.search.replace(/^\?/, '');
             if(path){
                 //组件展现
                 KISSY.use('brix/core/demolet', function(S, Demolet) {
                     var tmpl = '{{@components/'+path+'/}}';
                     var pagelet = new Demolet({
-                        projectCss:'style/style.css',//项目样式路径
+                        projectCss:'style/style.css',//项目样式路径,多个请传入数组
                         container:'.container',
                         tmpl:tmpl
                     });
